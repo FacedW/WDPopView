@@ -111,7 +111,7 @@
             self.popBackgroundView.frame = CGRectMake(self.popBackgroundView.frame.origin.x, self.popBackgroundView.frame.origin.y, self.popBackgroundView.frame.size.width, self.contentView.frame.size.height);
             break;
         case WDPopStyleFromBottom:
-            self.popBackgroundView.frame = CGRectMake(self.popBackgroundView.frame.origin.x, self.popBackgroundView.frame.size.height-self.contentView.frame.size.height, self.popBackgroundView.frame.size.width, self.contentView.frame.size.height);
+            self.popBackgroundView.frame = CGRectMake(self.popBackgroundView.frame.origin.x, WDPopScreenBounds.size.height-self.contentView.frame.size.height, self.popBackgroundView.frame.size.width, self.contentView.frame.size.height);
             break;
         default:
             break;
