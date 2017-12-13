@@ -6,7 +6,7 @@
 //  Copyright © 2017年 TN. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSUInteger,WDPopStyle) {
     WDPopStyleFromBottom = 0,

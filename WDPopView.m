@@ -92,7 +92,7 @@
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
-    if ([gestureRecognizer locationInView:self.popBackgroundView].y>=self.contentView.origin.y && self.popStyle==WDPopStyleFromBottom) {
+    if ([gestureRecognizer locationInView:self.popBackgroundView].y>=self.contentView.frame.origin.y && self.popStyle==WDPopStyleFromBottom) {
         return NO;
     }
     if ([gestureRecognizer locationInView:self.popBackgroundView].y<=CGRectGetMaxY(self.contentView.frame) && self.popStyle == WDPopStyleFromTop) {
@@ -122,12 +122,12 @@
 - (void)setContentViewFrame{
     switch (self.popStyle) {
         case WDPopStyleFromTop:
-            self.presentCenter = CGPointMake(self.popBackgroundView.size.width/2, -self.contentView.size.height/2);
-            self.afterCenter = CGPointMake(self.popBackgroundView.size.width/2, self.contentView.size.height/2);
+            self.presentCenter = CGPointMake(self.popBackgroundView.frame.size.width/2, -self.contentView.frame.size.height/2);
+            self.afterCenter = CGPointMake(self.popBackgroundView.frame.size.width/2, self.contentView.frame.size.height/2);
             break;
         case WDPopStyleFromBottom:
-            self.presentCenter = CGPointMake(self.popBackgroundView.size.width/2, self.popBackgroundView.size.height+self.contentView.size.height/2);
-            self.afterCenter = CGPointMake(self.popBackgroundView.size.width/2, self.popBackgroundView.size.height-self.contentView.size.height/2);
+            self.presentCenter = CGPointMake(self.popBackgroundView.frame.size.width/2, self.popBackgroundView.frame.size.height+self.contentView.frame.size.height/2);
+            self.afterCenter = CGPointMake(self.popBackgroundView.frame.size.width/2, self.popBackgroundView.frame.size.height-self.contentView.frame.size.height/2);
             break;
         default:
             break;
